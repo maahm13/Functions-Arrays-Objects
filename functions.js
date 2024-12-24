@@ -8,10 +8,10 @@ Do the following:
    3. Multiply a and b and return the answer
 */
 
-function multiply(/*add your code here*/){
-    /*add your code here*/
+function multiply(a, b) {
+    return a * b;
   }
-
+console.log(multiply(20, 5))
 
 /*
 
@@ -25,9 +25,10 @@ Do the following:
    3. Return the newly calculated age
 */
 
-function catYears(/*add your code here*/){
-    /*add your code here*/
+function catYears(humanAge){
+    return humanAge * 7;
 }
+console.log(catYears(13));
 
 
 
@@ -36,33 +37,18 @@ function catYears(/*add your code here*/){
 
 // Take the commented ES5 syntax and convert it to ES6 arrow Syntax
 
-
-/*
-
-------------
-function myFunction() {
-console.log("Function was invoked!");
+const myFunction = () => {
+  console.log("Function was invoked!");
 };
+myFunction(); 
 
-myFunction();
-----------------
 
-let anotherFunction = function (param) {
-  return param;
-};
+const anotherFunction = (param) => param;
+console.log(anotherFunction("Example")); 
 
-anotherFunction("Example");
 
----------------
-
-let add = function (param1, param2) {
-  return param1 + param2;
-};
-
-add(1,2);
-
-*/
-
+const add = (param1, param2) => param1 + param2;
+console.log(add(5, 7));  
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: Rock, Paper, Scissors - Let's play against the computer! 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -83,11 +69,25 @@ Use the game function below to do the following:
   HINT: Remember that the order in which we pass in our arguments matters when it comes to parameters
 */
 
-function game(user, computer){
-    /*add your code here*/
+const choices = ["rock", "paper", "scissors"];
+const computerChoice = choices[Math.floor(Math.random() * 3)];
+
+function game(user, computer) {
+  if (user === computer) {
+    return "it's a tie";
+  } else if (
+    (user === "rock" && computer === "scissors") ||
+    (user === "scissors" && computer === "paper") ||
+    (user === "paper" && computer === "rock")
+  ) {
+    return "you win!";
+  } else {
+    return "you lose!";
+  }
 }
 
-
+console.log(game("rock", computerChoice));
+console.log(`Computer chose: ${computerChoice}`);
 
 
 /*💪💪💪💪💪💪💪💪💪💪 Stretch 💪💪💪💪💪💪💪💪💪💪*/
